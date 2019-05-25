@@ -29,7 +29,7 @@
 ### service -- 服务
 - @Service
 
-### 事务
+### [事务](/src/main/java/com/selune/luckymoney/service/transaction.md)
 数据库事务，是指作为单个逻辑工作单元执行的一系列操作，要么完全执行，要么完全不执行
 - @Transactional
 
