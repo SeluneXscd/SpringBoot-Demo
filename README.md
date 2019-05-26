@@ -1,6 +1,7 @@
 # SpringBoot Demo
 
 - [第一个SpringBoot程序](#第一个SpringBoot程序)
+- [表单验证](#表单验证)
 - [AOP](#AOP面向切面)
 - [统一异常处理](#统一异常处理)
 - [程序结构](#程序结构)
@@ -20,6 +21,9 @@
     - @Autowired -- 表示被修饰的类需要注入对象,spring会扫描所有被@Autowired标注的类,然后根据 类型 在ioc容器中找到匹配的类注入。
 - 配置
 
+## 表单验证
+- @Valid
+
 ## AOP（面向切面）
 
 - AOP是一种编程范式，与语言无关，是一种程序设计思想
@@ -35,9 +39,9 @@
 写完一个方法或者类，都要进行单元测试
 - @AutoConfigureMockMvc
 
-- Assert
 - @RunWith(SpringRunner.class)
 - @SpringBootTest
+- Assert
 - maven打包默认会进行测试所有测试类`mvn clean package`，添加参数`-Dmaven.test.skip=true`可以跳过测试
 
 ## 程序结构
