@@ -19,7 +19,7 @@ public class LuckymoneyService {
     @Autowired
     private LuckymoneyRepository repository;
 
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public void createTwo() {
         Luckymoney luckymoney1 = new Luckymoney();
         luckymoney1.setProducer("张三");
