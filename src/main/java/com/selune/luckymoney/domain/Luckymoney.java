@@ -35,7 +35,4 @@ public class Luckymoney {
     public Luckymoney() {
     }
 
-    public Integer getId() {
-        return id;
-    }
 }
