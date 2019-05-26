@@ -1,6 +1,6 @@
 package com.selune.luckymoney.repository;
 
-import com.selune.luckymoney.pojo.Luckymoney;
+import com.selune.luckymoney.domain.Luckymoney;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

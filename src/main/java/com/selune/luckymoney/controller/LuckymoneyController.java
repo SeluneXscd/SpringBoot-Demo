@@ -1,11 +1,13 @@
 package com.selune.luckymoney.controller;
 
-import com.selune.luckymoney.pojo.Luckymoney;
+import com.selune.luckymoney.domain.Luckymoney;
 import com.selune.luckymoney.repository.LuckymoneyRepository;
 import com.selune.luckymoney.service.LuckymoneyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
@@ -34,13 +36,16 @@ public class LuckymoneyController {
 
     /**
      * 创建红包
+     * @Valid 表单验证
      */
     @PostMapping("/luckymoneys")
-    public Luckymoney create(@RequestParam("producer") String producer,
-                             @RequestParam("money") BigDecimal money) {
-        Luckymoney luckymoney = new Luckymoney();
-        luckymoney.setProducer(producer);
-        luckymoney.setMoney(money);
+    public Luckymoney create(@Valid Luckymoney luckymoney, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            System.out.println(bindingResult.getFieldError().getDefaultMessage());
+            return null;
+        }
+        luckymoney.setProducer(luckymoney.getProducer());
+        luckymoney.setMoney(luckymoney.getMoney());
         return repository.save(luckymoney);
     }
 
@@ -60,7 +65,8 @@ public class LuckymoneyController {
                              @RequestParam("consumer") String consumer) {
         // 查询内容
         Optional<Luckymoney> optionalLuckymoney = repository.findById(id);
-        if (optionalLuckymoney.isPresent()) {  // 如果有内容, 就设置consumer
+        // 如果有内容, 就设置consumer
+        if (optionalLuckymoney.isPresent()) {
             Luckymoney luckymoney = optionalLuckymoney.get();
             luckymoney.setConsumer(consumer);
             return repository.save(luckymoney);

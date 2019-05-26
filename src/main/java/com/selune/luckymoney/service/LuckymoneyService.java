@@ -1,6 +1,6 @@
 package com.selune.luckymoney.service;
 
-import com.selune.luckymoney.pojo.Luckymoney;
+import com.selune.luckymoney.domain.Luckymoney;
 import com.selune.luckymoney.repository.LuckymoneyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
