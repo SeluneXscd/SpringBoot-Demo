@@ -31,6 +31,15 @@
 
 - 自定义异常，Enum枚举类管理异常，方便维护代码
 
+## 单元测试
+写完一个方法或者类，都要进行单元测试
+- @AutoConfigureMockMvc
+
+- Assert
+- @RunWith(SpringRunner.class)
+- @SpringBootTest
+- maven打包默认会进行测试所有测试类`mvn clean package`，添加参数`-Dmaven.test.skip=true`可以跳过测试
+
 ## 程序结构
 
 ### domain
