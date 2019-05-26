@@ -1,9 +1,0 @@
-limit:
-  minMoney: 1
-  maxMoney: 200
-  description: 最小金额= ${limit.minMoney}元, 最大金额${limit.maxMoney}元
-
-server:
-  port: 8080
-  servlet:
-    context-path: /luckymoney
