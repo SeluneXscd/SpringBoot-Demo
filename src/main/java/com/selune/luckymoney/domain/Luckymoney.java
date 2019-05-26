@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Null;
 import java.math.BigDecimal;
 
@@ -23,7 +24,7 @@ public class Luckymoney {
     @GeneratedValue
     private Integer id;
 
-    @Null(message = "金额必填")
+    @NotNull(message = "金额必填")
     @Min(value = 0, message = "金额不正确")
     @Max(value = 200, message = "金额超出最大值")
     private BigDecimal money;

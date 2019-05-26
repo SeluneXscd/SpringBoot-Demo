@@ -29,7 +29,7 @@
       
       (value, message) -- value: 区间值，message: 错误信息
       
-      @Null -- 不能为空
+      @NotNull -- 不能为空
       
       
     
