@@ -71,7 +71,8 @@ public class LuckymoneyController {
             luckymoney.setConsumer(consumer);
             return repository.save(luckymoney);
         }
-        return null;  // 否则返回空
+        // 否则返回空
+        return null;
     }
 
     @PostMapping("/luckymoneys/two")

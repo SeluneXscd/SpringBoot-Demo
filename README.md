@@ -1,10 +1,20 @@
 # SpringBoot Demo
 
+[第一个SpringBoot程序](#第一个SpringBoot程序)
+
 ## 第一个SpringBoot程序
 - 注解
     - @Component -- 把普通pojo实例化到spring容器中，相当于配置文件中的`<bean id="" class=""/>`
     - @Autowired -- 表示被修饰的类需要注入对象,spring会扫描所有被@Autowired标注的类,然后根据 类型 在ioc容器中找到匹配的类注入。
 - 配置
+
+## AOP（面向切面）
+
+- AOP是一种编程范式，与语言无关，是一种程序设计思想
+
+- 将==通用==逻辑从==业务==逻辑中==分离==出来
+
+## 程序结构
 
 ### domain
 - @Entity -- 与数据表相对应
