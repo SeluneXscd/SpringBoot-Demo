@@ -15,7 +15,7 @@
 - 将==通用==逻辑从==业务==逻辑中==分离==出来
 
 ## ==统一==异常处理
-
+简化代码
 
 ## 程序结构
 
@@ -29,10 +29,7 @@
       
       (value, message) -- value: 区间值，message: 错误信息
       
-      @NotNull -- 不能为空
-      
-      
-    
+      @NotNull -- 不能为空    
     
 ### controller -- 控制器
 - @RestController -- 返回的内容就是return的内容

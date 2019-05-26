@@ -1,8 +1,10 @@
 package com.selune.luckymoney.controller;
 
 import com.selune.luckymoney.domain.Luckymoney;
+import com.selune.luckymoney.domain.Result;
 import com.selune.luckymoney.repository.LuckymoneyRepository;
 import com.selune.luckymoney.service.LuckymoneyService;
+import com.selune.luckymoney.utils.ResultUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -39,14 +41,14 @@ public class LuckymoneyController {
      * @Valid 表单验证
      */
     @PostMapping("/luckymoneys")
-    public Luckymoney create(@Valid Luckymoney luckymoney, BindingResult bindingResult) {
+    public Result<Luckymoney> create(@Valid Luckymoney luckymoney, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            System.out.println(bindingResult.getFieldError().getDefaultMessage());
-            return null;
+            return ResultUtils.fail(1, bindingResult.getFieldError().getDefaultMessage());
         }
         luckymoney.setProducer(luckymoney.getProducer());
         luckymoney.setMoney(luckymoney.getMoney());
-        return repository.save(luckymoney);
+
+        return ResultUtils.success(repository.save(luckymoney));
     }
 
     /**
