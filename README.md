@@ -14,17 +14,24 @@
 
 - 将==通用==逻辑从==业务==逻辑中==分离==出来
 
+## ==统一==异常处理
+
+
 ## 程序结构
 
 ### domain
 - @Entity -- 与数据表相对应
     - @Id -- 对应表中主键
-    - @GeneratedValue -- 自增
+    - @GeneratedValue -- 自增    
     - @Max -- 最大值
     
       @Min -- 最小值
       
       (value, message) -- value: 区间值，message: 错误信息
+      
+      @Null -- 不能为空
+      
+      
     
     
 ### controller -- 控制器
